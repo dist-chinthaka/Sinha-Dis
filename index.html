@@ -685,7 +685,7 @@ function buildReceiptText() {
 
 //total line setup
   const label = "NET TOTAL ";
-  const value = '(Rs.)' + net.toFixed(2);
+  const value = 'Rs: ' + net.toFixed(2);
   const paddedValue = value.padStart(W - label.length, ' ');
    
 
@@ -710,7 +710,7 @@ function buildReceiptText() {
   r += '-'.repeat(W) + '\n\n';
   r += `${label}${paddedValue}\n`;
   
- // r += `NET (Rs.) - ${net.toFixed(2)}\n`;
+ // r += `NET  Rs: - ${net.toFixed(2)}\n`;
   r += '-'.repeat(W) + '\n\n\n\n';
   r += 'Customer Sig.-\n';
   r += '.'.repeat(W) + '\n';
