@@ -505,7 +505,7 @@ function saveProducts(prods) { localStorage.setItem('sinha_products', JSON.strin
 
 let products = loadProducts();
 let invoiceItems = [
-  { productId:1, desc:'SAMAPOSHA 200G-MRP185.00', unit:'PKT', qty:6, rate:166.50 }
+  //{ productId:1, desc:'SAMAPOSHA 200G-MRP185.00', unit:'PKT', qty:6, rate:166.50 }
 ];
 let nextId = Math.max(...products.map(p=>p.id), 0) + 1;
 
@@ -685,7 +685,7 @@ function buildReceiptText() {
 
 //total line setup
   const label = "NET TOTAL ";
-  const value = 'Rs: ' + net.toFixed(2);
+  const value = '(Rs.)' + net.toFixed(2);
   const paddedValue = value.padStart(W - label.length, ' ');
    
 
@@ -710,7 +710,7 @@ function buildReceiptText() {
   r += '-'.repeat(W) + '\n\n';
   r += `${label}${paddedValue}\n`;
   
- // r += `NET  Rs: - ${net.toFixed(2)}\n`;
+ // r += `NET (Rs.) - ${net.toFixed(2)}\n`;
   r += '-'.repeat(W) + '\n\n\n\n';
   r += 'Customer Sig.-\n';
   r += '.'.repeat(W) + '\n';
